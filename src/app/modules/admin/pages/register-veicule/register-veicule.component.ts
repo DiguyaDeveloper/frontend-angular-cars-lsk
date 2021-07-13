@@ -18,6 +18,7 @@ export class RegisterVeiculeComponent implements OnInit {
   destroy$: Subject<boolean> = new Subject<boolean>();
   veicule: VeiculeInterface;
   colors;
+  fabricantes;
 
   constructor(
     private fb: FormBuilder,
@@ -32,12 +33,20 @@ export class RegisterVeiculeComponent implements OnInit {
   ngOnInit(): void {
     this.ngCreateForm();
     this.colors = [
-      { key: 'branco', value: 'Branco' },
+      { key: 'preto', value: 'Preto' },
+      { key: 'verde', value: 'Verde' },
+      { key: 'laranja', value: 'Laranja' },
+      { key: 'roxo', value: 'Roxo' },
       { key: 'azul', value: 'Azul' },
-      { key: 'vermelho', value: 'Vermelho' }
+      { key: 'vermelho', value: 'Vermelho' },
+      { key: 'amarelo', value: 'Amarelo' },
+      { key: 'branco', value: 'Branco' }
+    ];
+
+      this.fabricantes = [
+      { key: 'VolksWagen', value: 'VW' },
     ];
   }
-
   ngCreateForm(): void {
     this.form = this.fb.group({
       plate: ['', Validators.required],
