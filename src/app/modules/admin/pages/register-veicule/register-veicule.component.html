@@ -20,7 +20,7 @@
                 <span class="invalid-feedback" *ngIf="submitted && f.proprietary.errors"> Campo obrigatório</span>
               </div>
             </div>
-            <div class="col-md-4 mb-3">
+            <div class="col-md-12 mb-3">
               <div class="form-group">
                 <label> Placa <span class="asterisk"></span> </label>
                 <input
@@ -59,7 +59,7 @@
                   [ngClass]="{ 'is-invalid': submitted && f.color.errors }"
                 >
                   <option value=""></option>
-                  <option *ngFor="let item of color" [value]="item.key">
+                  <option *ngFor="let item of colors" [value]="item.key">
                     {{ item.value }}
                   </option>
                 </select>

@@ -17,7 +17,7 @@ export class RegisterVeiculeComponent implements OnInit {
   fileToUpload: File;
   destroy$: Subject<boolean> = new Subject<boolean>();
   veicule: VeiculeInterface;
-  color: [{ key: 'branco', value: 'Branco' }];
+  colors;
 
   constructor(
     private fb: FormBuilder,
@@ -31,6 +31,11 @@ export class RegisterVeiculeComponent implements OnInit {
 
   ngOnInit(): void {
     this.ngCreateForm();
+    this.colors = [
+      { key: 'branco', value: 'Branco' },
+      { key: 'azul', value: 'Azul' },
+      { key: 'vermelho', value: 'Vermelho' }
+    ];
   }
 
   ngCreateForm(): void {
